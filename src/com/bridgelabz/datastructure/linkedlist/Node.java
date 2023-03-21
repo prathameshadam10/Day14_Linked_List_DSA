@@ -1,4 +1,4 @@
-package com.bridgelabz.datastructure.linkedlist;
+package com.bridgelabz;
 
 public class Node<T> {
     T data;
