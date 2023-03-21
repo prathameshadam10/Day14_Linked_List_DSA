@@ -1,5 +1,7 @@
 package com.bridgelabz;
 
+import com.sun.source.tree.BreakTree;
+
 public class LinkedList<T> {
     Node<T> head;
     Node<T> tail;
@@ -51,10 +53,10 @@ public class LinkedList<T> {
     }
 
     public T popLast() {
-        if(head == null)
+        if (head == null)
             return null;
         T popData = tail.data;
-        if(head == tail) {
+        if (head == tail) {
             head = null;
             return popData;
         }
@@ -68,14 +70,26 @@ public class LinkedList<T> {
         return popData;
     }
 
-    public Node<T> serch(T serchData) {
+    public Node<T> search(T searchData) {
         Node<T> temp = head;
         while (temp != null) {
-            if (temp.data.equals(serchData))
+            if (temp.data.equals(searchData))
                 return temp;
             temp = temp.next;
         }
         return null;
 
     }
+
+    public boolean insertAfter(T searchData, T insertData) {
+        Node<T> newNode = new Node<>(insertData);
+        Node<T> serchedNode = search(searchData);
+        if (serchedNode != null) {
+           newNode.next = serchedNode.next;
+            serchedNode.next = newNode;
+            return true;
+        }
+            return false;
+    }
+
 }
