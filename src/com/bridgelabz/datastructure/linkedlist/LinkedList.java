@@ -85,11 +85,35 @@ public class LinkedList<T> {
         Node<T> newNode = new Node<>(insertData);
         Node<T> serchedNode = search(searchData);
         if (serchedNode != null) {
-           newNode.next = serchedNode.next;
+            newNode.next = serchedNode.next;
             serchedNode.next = newNode;
             return true;
         }
-            return false;
+        return false;
     }
 
+    
+public void deleteAnyelement(T delete) {
+    if (head == null) {
+        return;
+    }
+
+    if (head.data.equals(delete)) {
+        head = head.next;
+        return;
+    }
+
+    Node<T> prev = head;
+    Node<T> current = head.next;
+
+    while (current != null) {
+        if (current.data.equals(delete)) {
+            System.out.println("DATA DELETED SUCCESSFULLY");
+            prev.next = current.next;
+            return;
+        }
+        prev = current;
+        current = current.next;
+    }
+}
 }
