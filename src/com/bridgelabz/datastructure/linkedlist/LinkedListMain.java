@@ -1,57 +1,33 @@
-package com.bridgelabz;
+package com.bridgelabz.orderedlist;
 
-public class LinkedListMain {
+import java.util.Scanner;
+
+public class LinkedListNumMain {
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList1 = new LinkedList<>();
-        linkedList1.push(70);
-        linkedList1.push(30);
-        linkedList1.push(56);
-        linkedList1.show();
-
-        LinkedList<Integer> linkedList2 = new LinkedList<>();
-        linkedList2.add(56);
-        linkedList2.add(30);
-        linkedList2.add(70);
-        linkedList2.show();
-
-
-        Integer poppedData1 = linkedList1.pop();
-        if (poppedData1 == null)
-            System.out.println("Linked  is Empty");
-        else
-            System.out.println("The Element Popped is => " + poppedData1);
-        linkedList1.show();
-
-
-        Integer poppedData2 = linkedList2.popLast();
-        if (poppedData2 == null)
-            System.out.println("Linked List is Empty");
-        else
-            System.out.println("The Element Popped is => " + poppedData2);
-//        linkedList2.show();
-
-        LinkedList<Integer> linkedList3 = new LinkedList<>();
-        linkedList3.push(70);
-        linkedList3.push(30);
-        linkedList3.push(56);
-        linkedList3.show();
-        Node<Integer> serchedData = linkedList3.search(30);
-        if (serchedData == null) {
-            System.out.println("Element not found!");
-        } else {
-            System.out.println("Element Found");
+        Scanner sc = new Scanner(System.in);
+   SortedLinkedListNum<Integer> sortedLinkedListNum = new SortedLinkedListNum<>();
+        System.out.println("How many number do you want to add: ");
+        int number = sc.nextInt();
+        for(int i=0; i<number; i++){
+            System.out.println("Enter the number which you want add to the linkedList:");
+            int num = sc.nextInt();
+            sortedLinkedListNum.addData(num);
         }
-    boolean isInserted = linkedList3.insertAfter(30, 40);
-        if(isInserted)
-            System.out.println("Element Inserted Successfully");
-        else
-            System.out.println("Element Not Inserted");
-        linkedList3.show();
-
-        linkedList3.deleteAnyelement(40);
-        linkedList3.show();
-
+        System.out.println("Original Linked List");
+        sortedLinkedListNum.display();
+        System.out.println();
+        System.out.println("sorted linked list");
+        sortedLinkedListNum.sort();
+        sortedLinkedListNum.display();
+        while (true){
+            System.out.println();
+            System.out.println("Enter a number to check weather it is present or not:-");
+            int n = sc.nextInt();
+            sortedLinkedListNum.search(n);
+            System.out.println("Updated linked list");
+            sortedLinkedListNum.display();
+        }
+    }
 }
 
-    }
 
