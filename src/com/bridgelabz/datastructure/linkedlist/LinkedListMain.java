@@ -50,6 +50,16 @@ public class LinkedListMain {
 
         linkedList3.deleteAnyelement(40);
         linkedList3.show();
+        SortedLinkedList<Integer> sortedLinkedList = new SortedLinkedList<>();
+        sortedLinkedList.addData(70);
+        sortedLinkedList.addData(40);
+        sortedLinkedList.addData(56);
+        sortedLinkedList.addData(30);
+        System.out.println("Original Linked List...");
+        sortedLinkedList.display();
+        System.out.println("Sorted Linked List...");
+        sortedLinkedList.sort();
+        sortedLinkedList.display();
 
 }
 
