@@ -14,6 +14,7 @@ public class LinkedListMain {
         linkedList2.add(70);
         linkedList2.show();
 
+
         Integer poppedData1 = linkedList1.pop();
         if (poppedData1 == null)
             System.out.println("Linked  is Empty");
@@ -27,7 +28,7 @@ public class LinkedListMain {
             System.out.println("Linked List is Empty");
         else
             System.out.println("The Element Popped is => " + poppedData2);
-        linkedList2.show();
+//        linkedList2.show();
 
         LinkedList<Integer> linkedList3 = new LinkedList<>();
         linkedList3.push(70);
@@ -46,6 +47,11 @@ public class LinkedListMain {
         else
             System.out.println("Element Not Inserted");
         linkedList3.show();
+
+        linkedList3.deleteAnyelement(40);
+        linkedList3.show();
+
 }
+
     }
 
